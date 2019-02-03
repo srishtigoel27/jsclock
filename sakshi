@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas</title>
+	</head>
+	<body align="center">
+		<canvas id="canvas" width="600" height="600" style="border:10px solid; background-color:black">
+		</canvas>
+		<script>
+    function drawTime(ctx,radius){
+      var time = new Date();
+      var hour = time.getHours();
+      var min = time.getMinutes();
+      var sec = time.getSeconds();
+      hour = hour%12;
+      var hourHand = (hour*Math.PI/6)+(min*Math.PI/(6*60))+(sec*Math.PI/(6*60*60));
+      drawHand(ctx,hourHand,radius*0.5,radius*0.06);
+      var minHand = (min*Math.PI/30)+(sec*Math.PI/(30*60));
+      drawHand(ctx,minHand,radius*0.7,radius*0.06);
+      var secHand = (sec*Math.PI/30);
+      drawHand(ctx,secHand,radius*0.9,radius*0.02);
+    }
+    </script>
+  </body>
+</html>
 
