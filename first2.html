@@ -62,6 +62,16 @@
 				var secHand = (sec*Math.PI/30);
 				drawHand(ctx,secHand,radius*0.9,radius*0.02);
 			}
+			function drawHand(ctx,pos,len,width){
+				ctx.beginPath();
+				ctx.lineWidth=width;
+				ctx.lineCap = "round";
+				ctx.moveTo(0,0);
+				ctx.rotate(pos);
+				ctx.lineTo(0,-len);
+				ctx.stroke();
+				ctx.rotate(-pos);
+			}
 			}
       </script>
   	</body>
